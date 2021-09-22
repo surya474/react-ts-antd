@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Menu,Button  } from "antd";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  UserOutlined,
+  VideoCameraOutlined,
+  UploadOutlined
+} from "@ant-design/icons";
+
+interface INavNames {
+  name: Array<string>;
 }
+
+const App = () => {
+  const navList: INavNames = { name: ["nav1", "nav2", "nav3"] };
+
+  return (
+    <React.Fragment>
+      <div className="logo" />
+      <Menu theme="light" defaultSelectedKeys={["1"]}>
+        <Menu.Item key="1" icon={<UserOutlined />}>
+          {navList.name[0]}
+        </Menu.Item>
+        <Menu.Item key="2" icon={<VideoCameraOutlined />}>
+          {navList.name[1]}
+        </Menu.Item>
+        <Menu.Item key="3" icon={<UploadOutlined />}>
+          {navList.name[2]}
+        </Menu.Item>
+      </Menu>
+      <div>
+      <Button type="primary">Primary Button</Button>
+      </div>
+   
+    </React.Fragment>
+  );
+};
 
 export default App;

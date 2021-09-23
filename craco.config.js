@@ -3,6 +3,7 @@
   
 
  const CracoLessPlugin = require('craco-less-plugin')
+ const path = require('path')
  
 module.exports = {
   plugins: [
@@ -10,7 +11,7 @@ module.exports = {
       plugin: CracoLessPlugin,
       options: {
         modifyVars: {
-          hack: `true;@import "${require.resolve('./src/styles/theme.less')}";`
+          hack: `true;@import "${require.resolve(path.join(__dirname, "src/styles/theme.less"))}";`
         },
         javascriptEnabled: true
       }

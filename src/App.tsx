@@ -15,7 +15,7 @@ const App = () => {
   const navList: INavNames = { name: ["nav1", "nav2", "nav3"] };
 
   return (
-    <React.Fragment>
+    <>
       <div className="logo" />
       <Menu theme="light" defaultSelectedKeys={["1"]}>
         <Menu.Item key="1" icon={<UserOutlined />}>
@@ -32,7 +32,7 @@ const App = () => {
       <Button type="primary">Primary Button</Button>
       </div>
    
-    </React.Fragment>
+    </>
   );
 };
 
